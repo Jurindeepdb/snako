@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Yesteryear&display=swap');
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  background: #0f172a;
+  color: black;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #8A4FFF;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+}
+
+header img{
+    height: 40px;
+}
+
+header h2 {
+    margin: 0 20px;
+    font-size: 24px;
+    letter-spacing: 0.2px;
+    flex-grow: 1;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 80px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: "Yesteryear", cursive;
+}
+
+/* Main layout */
+main {
+    display: flex;
+    height: 100%;
+}
+
+/* Controls column */
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 25%;
+    padding: 40px;
+    padding-top: 120px;
+    background-color: #C3BEF7;
+    height: 100%;
+}
+
+#controls input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    color: black;
+    margin: 20px 0;
+}
+
+/* Buttons row */
+#buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+#buttons button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 100px;
+    border: none;
+    background: #22c55e;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Info row */
+#info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-family: monospace;
+}
+
+/* Leaderboard */
+h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+#leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background-color: #E5ECF4;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#leaderboard thead th {
+    padding: 10px 10px;
+    text-align: left;
+    opacity: 0.9;
+}
+
+#leaderboard tbody td {
+    padding: 10px 10px;
+    border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Clear scores button */
+#clearScores {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 100px;
+    border: none;
+    background-color: #22c55e;
+    width: 100px;
+    color: inherit;
+    cursor: pointer;
+    align-self: center;
+}
+
+/* Game area */
+#game-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E5ECF4;
+    width: 75%;
+    padding-top: 100px;
+    height: 100%;
+}
+
+#game-area canvas {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    background: #EFFFFA;
+    border-radius: 8px;
+    border: 4px solid #8A4FFF;
+    image-rendering: pixelated;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block;
+}
+
+/* Overlay */
+#gameOverOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2,6,23,0.55);
+    z-index: 30;
+}
+
+#gameOverOverlay.hidden {
+    display: none;
+}
+
+#overlayCard {
+    width: 320px;
+    background: #8A4FFF;
+    color: #e6eef8;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+#overlayCard h2 {
+    margin: 4px 0 8px 0;
+}
+
+#overlayCard input {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 8px 0 12px 0;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.04);
+    background-color: white;
+    color: black;
+}
+
+#overlayActions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+#overlayActions button {
+    padding: 8px 12px;
+    border-radius: 100px;
+    border: none;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+}
+
+/*Dark*/
+#toggle{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+header.dark {
+  background-color: #151b25;
+  color: #e5e7eb;
+}
+
+#controls.dark {
+  background-color: #19212e;
+  color: #e5e7eb;
+}
+
+#leaderboard.dark {
+  background-color: #020617;
+  color: #e5e7eb;
+}
+
+#game-area.dark {
+  background-color: #212d40;
+}
+
+#game.dark {
+  background-color: #000000;
+  border: 4px solid #22c55e;
+}
+
+#overlayCard.dark {
+  background-color: #19212e;
+  color: #e5e7eb;
+}
+
+#username {
+  border:none;
+  color: black;
+}
+/* Responsive */
+@media (max-width: 720px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 8px;
+  }
+
+  #controls {
+    order: 2;
+  }
+
+  #game-area {
+    order: 1;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Snako</title>
+  <link rel="icon" type="image/x-icon" href="/images/logo.png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <img src="images/logo.png" alt="Snake Logo" id="logo" />
+    <h2>Arcadely</h2>
+    <h1>Snako</h1>
+    <button id="toggle">
+        <img id="toggleImg" src="images/moon.png" alt="toggle">
+    </button>
+    
+
+  </header>
+
+  <main>
+    <div id="controls">
+      <input
+        id="username"
+        placeholder="Enter username (optional)"
+        maxlength="20"
+        aria-label="username"
+      />
+
+      <div id="buttons">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn" disabled>Pause</button>
+        <button id="resetBtn" disabled>Reset</button>
+      </div>
+
+      <div id="info">
+        <div>Score: <span id="score">0</span></div>
+        <div>Your Best: <span id="best">0</span></div>
+      </div>
+
+      <h3>Leaderboard</h3>
+
+      <table id="leaderboard">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Score</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <button id="clearScores">Clear Scores</button>
+    </div>
+
+    <section id="game-area">
+      <canvas id="game" width="400" height="400" aria-label="Snake game canvas"></canvas>
+
+      <div id="gameOverOverlay" class="hidden" aria-hidden="true">
+        <div id="overlayCard">
+          <h2>Game Over</h2>
+          <p>Score: <strong id="finalScore">0</strong></p>
+
+          <input
+            id="overlayName"
+            placeholder="Enter name to save (or leave blank for Anonymous)"
+            maxlength="30"
+            aria-label="overlay name"
+          />
+
+          <div id="overlayActions">
+            <button id="saveScoreBtn">Save</button>
+            <button id="continueBtn">Continue</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
